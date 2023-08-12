@@ -1,4 +1,4 @@
-<x-guest-layout>
+<?php /*<x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -49,4 +49,68 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout>*/
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+@vite(['resources/css/signup.css'])
+<title>Netflix - Watch TV Shows Online, Watch Movies Online</title>
+</head>
+<body>
+    <header class="showcase">
+        
+        <div class="logo">
+            <img src="/images/logo.png">
+        </div>
+
+        <div class="showcase-content">
+            <div class="formm">
+                <div class="container">
+                    <div class="title">Registation</div>
+                    <form action="{{route('register')}}"  method="POST"  accept-charset="UTF-8">
+                        {{ csrf_field() }}
+                        <div class="user_details">
+                            <div class="input_pox">
+                                <span class="datails">Full Name</span>
+                                <input type="text" placeholder="enter your name" name="name" required>
+                            </div>
+                            <div class="input_pox">
+                                <span class="datails">Username</span>
+                                <input type="text" placeholder="enter your Username" name="username" required>
+                            </div>
+                            <div class="input_pox">
+                                <span class="datails">Email</span>
+                                <input type="text" placeholder="enter your Email" name="email" required>
+                            </div>
+                            <div class="input_pox">
+                                <span class="datails">Phone Number</span>
+                                <input type="text" placeholder="enter your Phone" name="phone" required>
+                            </div>
+                            <div class="input_pox">
+                                <span class="datails">Password</span>
+                                <input type="text" placeholder="enter your Password" name="password" required>
+                            </div>
+                            <div class="input_pox">
+                                <span class="datails">Confirm Password</span>
+                                <input type="text" name="password_confirmation" placeholder="Confirm your Password" >
+                            </div>
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Register">
+                        </div>
+                        <div class="signup">
+                            <p>Already have an account?</p>
+                            <a href="/login">Sign in</a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        
+        </div>
+</header>
+</body>
+</html>

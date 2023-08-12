@@ -81,7 +81,7 @@
             
             <div class="signup">
                 <p>New to Movieflix ?</p>
-                <a href="/signup">Sign up now</a>
+                <a href="/register">Sign up now</a>
             </div>
 
         </div>
