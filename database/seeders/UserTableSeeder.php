@@ -17,22 +17,19 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert([
             //Admin
             [
+                'name'=>'admin',
                 'username'=>'admin',
-                'phone'=>'7',
                 'email'=>'admin@gmail.com',
                 'password'=>Hash::make('123'),
                 'role'=>'admin',
-                'gender'=>"male"
             ],
             //User
             [
-               
+                'name'=>'user',
                 'username'=>'user',
-                'phone'=>'7',
                 'email'=>'user@gmail.com',
                 'password'=>Hash::make('123'),
-                'role'=>'user',
-                'gender'=>"male"
+                'role'=>'user'
             ],
            
         ]);
