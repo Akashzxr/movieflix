@@ -76,7 +76,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('logout') }}">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -100,33 +100,17 @@
                 </div>
                 <!-- User Account -->
                 <div class="user">
-                    <img src="img/user/user.jpg" alt="user image">
+                    <img src="/images/user/user.jpg" alt="user image">
                 </div>
                 <div class="accountMenu">
                     <h3>Noha Fawzy<br /><span>Entrepreneur</span></h3>
                     <ul>
                         <li>
-                            <img src="img/user/user.png" alt="profile">
+                            <img src="/images/user/user.png" alt="profile">
                             <a href="#">My Profile</a>
                         </li>
                         <li>
-                            <img src="img/user/edit.png" alt="profile">
-                            <a href="#">Edit Profile</a>
-                        </li>
-                        <li>
-                            <img src="img/user/envelope.png" alt="profile">
-                            <a href="#">Inbox</a>
-                        </li>
-                        <li>
-                            <img src="img/user/settings.png" alt="profile">
-                            <a href="#">Settings</a>
-                        </li>
-                        <li>
-                            <img src="img/user/question.png" alt="profile">
-                            <a href="#">Help</a>
-                        </li>
-                        <li>
-                            <img src="img/user/log-out.png" alt="profile">
+                            <img src="/images/user/log-out.png" alt="profile">
                             <a href="#">Log Out</a>
                         </li>
                     </ul>
