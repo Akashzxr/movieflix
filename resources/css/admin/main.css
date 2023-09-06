@@ -11,10 +11,13 @@
 
 :root {
     --blue: #287bff;
+    --balck0: #191c24;
     --white: #FFF;
     --grey: #f5f5f5;
     --black1: #222;
     --black2: #999;
+    --black3: black;
+    --red1: #d74141;
 }
 
 /* width */
@@ -30,7 +33,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--blue);
+    background: var(--balck0);
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -95,8 +98,8 @@ a {
     position: fixed;
     width: 250px;
     height: 100%;
-    background: var(--blue);
-    border-left: 10px solid var(--blue);
+    background: var(--balck0);
+    border-left: 10px solid var(--balck0);
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -125,7 +128,7 @@ a {
 
 .container .navigation ul li:hover,
 .container .navigation ul li.hovered {
-    background: var(--white);
+    background: var(--black3);
 }
 
 .container .navigation ul li:first-child {
@@ -143,7 +146,7 @@ a {
 
 .container .navigation ul li:hover a,
 .container .navigation ul li.hovered a {
-    color: var(--blue);
+    color: var(--red1);
 }
 
 .container .navigation ul li a .icon {
@@ -183,7 +186,7 @@ a {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     background: transparent;
-    box-shadow: 35px 35px 0 10px var(--white);
+    box-shadow: 35px 35px 0 10px var(--black3);
     pointer-events: none;
 }
 
@@ -201,7 +204,7 @@ a {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     background: transparent;
-    box-shadow: 35px -35px 0 10px var(--white);
+    box-shadow: 35px -35px 0 10px var(--black3);
     pointer-events: none;
 }
 
@@ -211,7 +214,7 @@ a {
     width: calc(100% - 250px);
     left: 250px;
     min-height: 100vh;
-    background: var(--white);
+    background: var(--black3);
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -243,6 +246,7 @@ a {
     align-items: center;
     font-size: 2.5em;
     cursor: pointer;
+    color: var(--red1);
 }
 
 /* Search */
@@ -395,7 +399,7 @@ a {
 }
 
 .accountMenu ul li:hover a {
-    color: var(--blue);
+    color: var(--balck0);
 }
 
 /* Cards */
@@ -410,7 +414,7 @@ a {
 
 .cardBox .card {
     position: relative;
-    background: var(--white);
+    background: var(--balck0);
     padding: 30px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
     border-radius: 20px;
@@ -432,7 +436,7 @@ a {
     position: relative;
     font-weight: 500;
     font-size: 2.5em;
-    color: var(--blue);
+    color: var(--red1);
 }
 
 .cardBox .card .cardName {
@@ -447,13 +451,13 @@ a {
 }
 
 .cardBox .card:hover {
-    background: var(--blue);
+    background: var(--white);
 }
 
 .cardBox .card:hover .numbers,
 .cardBox .card:hover .cardName,
 .cardBox .card:hover .iconBx {
-    color: var(--white);
+    color: red;
 }
 
 /* Charts */
@@ -514,14 +518,14 @@ a {
 
 .details .cardHeader h2 {
     font-weight: 600;
-    color: var(--blue);
+    color: var(--black0);
 }
 
 .details .cardHeader .btn {
     position: relative;
     padding: 5px 10px;
     color: var(--white);
-    background: var(--blue);
+    background: var(--black0);
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -549,7 +553,7 @@ a {
 }
 
 .details .recentOrders table tbody tr:hover {
-    background: var(--blue);
+    background: var(--balck0);
     color: var(--white);
 }
 
@@ -670,7 +674,7 @@ a {
 }
 
 .recentCustomers table tr:hover {
-    background: var(--blue);
+    background: var(--balck0);
     color: var(--white);
 }
 
