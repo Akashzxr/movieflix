@@ -19,6 +19,15 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/admin/movies', function () {
+    return view('admin.admin_movies');
+});
+
+
+Route::get('/', function () {
+    return view('auth.login');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -30,5 +39,6 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-Route::get('/admin/admin_dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.admin_dashboard');
+Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.admin_dashboard');
+
 //Route::get('/admin/admin_dashboard',[AdminController::class, 'AdminDashboard']);
