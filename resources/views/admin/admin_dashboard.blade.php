@@ -38,41 +38,41 @@
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
+                            <ion-icon name="film-outline"></ion-icon>
                         </span>
-                        <span class="title">Customers</span>
+                        <span class="title">Manage Movies</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="chatbubble-outline"></ion-icon>
+                            <ion-icon name="file-tray-full-outline"></ion-icon>
                         </span>
-                        <span class="title">Messages</span>
+                        <span class="title">Manage Genre</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="help-outline"></ion-icon>
+                            <ion-icon name="tv-outline"></ion-icon>
                         </span>
-                        <span class="title">Help</span>
+                        <span class="title">Manage Theatre</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
+                            <ion-icon name="logo-youtube"></ion-icon>
                         </span>
-                        <span class="title">Settings</span>
+                        <span class="title">Manage OTT</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
+                            <ion-icon name="person-circle-outline"></ion-icon>
                         </span>
-                        <span class="title">Password</span>
+                        <span class="title">Profile</span>
                     </a>
                 </li>
                 <li>
@@ -121,37 +121,37 @@
                 <div class="card">
                     <div class="cardDetails">
                         <div class="numbers">1,504</div>
-                        <div class="cardName">Daily Views</div>
+                        <div class="cardName">Users</div>
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="eye-outline"></ion-icon>
+                        <ion-icon name="people-outline"></ion-icon>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardDetails">
                         <div class="numbers">80</div>
-                        <div class="cardName">Sales</div>
+                        <div class="cardName">Movies</div>
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="cart-outline"></ion-icon>
+                        <ion-icon name="film-outline"></ion-icon>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardDetails">
                         <div class="numbers">277</div>
-                        <div class="cardName">Comments</div>
+                        <div class="cardName">Reviews</div>
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                        <ion-icon name="create-outline"></ion-icon>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardDetails">
-                        <div class="numbers">$7,842</div>
-                        <div class="cardName">Earning</div>
+                        <div class="numbers">7</div>
+                        <div class="cardName">Genre</div>
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="cash-outline"></ion-icon>
+                        <ion-icon name="file-tray-full-outline"></ion-icon>
                     </div>
                 </div>
             </div>
