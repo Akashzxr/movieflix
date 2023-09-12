@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/admin/genre">
                         <span class="icon">
                             <ion-icon name="file-tray-full-outline"></ion-icon>
                         </span>
@@ -111,7 +111,7 @@
                         </li>
                         <li>
                             <img src="/images/user/log-out.png" alt="profile">
-                            <a href="#">Log Out</a>
+                            <a href="{{ route('logout') }}">Log Out</a>
                         </li>
                     </ul>
                 </div>

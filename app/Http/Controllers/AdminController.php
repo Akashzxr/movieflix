@@ -24,4 +24,10 @@ class AdminController extends Controller
                        'genrecount' => $GenreCount,
                     ]);
     }
+
+    public function ViewGenre(){
+        $genres = Genre::paginate(3);
+        return view('admin.admin_genres',
+                    ['genres' => $genres]);
+    }
 }
