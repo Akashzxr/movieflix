@@ -41,5 +41,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.admin_dashboard');
 Route::get('/admin/genre', [AdminController::class, 'ViewGenre'])->name('admin.genre');
+Route::delete('/admin/genre/{id}', [AdminController::class, 'DeleteGenre'])->name('admin.deletegenre');
 
 //Route::get('/admin/admin_dashboard',[AdminController::class, 'AdminDashboard']);

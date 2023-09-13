@@ -41,51 +41,17 @@
                 {{ $genre->genre_name }}
               </td>
               <td class='select'>
-                <a class='button' href='#'>
+                <form action="/admin/genre/{{$genre->genre_id}}" method="POST">
+                  @method('DELETE')
+                  @csrf
+                  {{ csrf_field() }}
+                <button type="submit" class='button'>
                   delete
-                </a>
+                </button>
+              </form>
               </td>
             </tr>
             @endforeach
-          <!--  <tr>
-              <td data-title='Provider Name'>
-                Julius Neumann
-              </td>
-              <td data-title='E-mail'>
-                e-mail@test-email.com
-              </td>
-              <td class='select'>
-                <a class='button' href='#'>
-                  Select
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td data-title='Provider Name'>
-                Christoph Koller
-              </td>
-              <td data-title='E-mail'>
-                e-mail@test-email.com
-              </td>
-              <td class='select'>
-                <a class='button' href='#'>
-                  Select
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td data-title='Provider Name'>
-                Bram Lemmens
-              </td>
-              <td data-title='E-mail'>
-                e-mail@test-email.com
-              </td>
-              <td class='select'>
-                <a class='button' href='#'>
-                  Select
-                </a>
-              </td>
-            </tr>!-->
           </tbody>
         </table>
       </main>

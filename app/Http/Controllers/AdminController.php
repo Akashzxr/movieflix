@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Movie;
@@ -29,5 +31,11 @@ class AdminController extends Controller
         $genres = Genre::paginate(3);
         return view('admin.admin_genres',
                     ['genres' => $genres]);
+    }
+
+    public function DeleteGenre(Request $request, $id): RedirectResponse
+    {
+        Genre::where('genre_id',$id)->delete();
+        return Redirect::route('admin.genre')->with('status', 'genre-deleted');
     }
 }
