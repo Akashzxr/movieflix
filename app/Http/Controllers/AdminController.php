@@ -29,13 +29,24 @@ class AdminController extends Controller
 
     public function ViewGenre(){
         $genres = Genre::paginate(3);
+
         return view('admin.admin_genres',
                     ['genres' => $genres]);
+                   
     }
 
     public function DeleteGenre(Request $request, $id): RedirectResponse
     {
         Genre::where('genre_id',$id)->delete();
         return Redirect::route('admin.genre')->with('status', 'genre-deleted');
+    }
+
+    public function AddGenre(Request $request): RedirectResponse
+    {
+      $genre = Genre::create([
+         'genre_name' => $request->genre_name,
+      ]);
+      $genre->save();
+      return Redirect::route('admin.addform');
     }
 }

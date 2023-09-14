@@ -9,4 +9,5 @@ class Genre extends Model
 {
     use HasFactory;
     protected $table = 'Genres';
+    protected $fillable = ['genre_name'];
 }

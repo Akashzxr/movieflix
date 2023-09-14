@@ -35,6 +35,11 @@ Route::middleware(['nouseraccess','auth'])->group(function () {
 Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.admin_dashboard');
 Route::get('/admin/genre', [AdminController::class, 'ViewGenre'])->name('admin.genre');
 Route::delete('/admin/genre/{id}', [AdminController::class, 'DeleteGenre'])->name('admin.deletegenre');
+Route::post('/admin/genre/add', [AdminController::class, 'AddGenre'])->name('admin.addgenre');
+
+Route::get('/admin/genre/add-form', function () {
+    return view('admin.admin_genre_add');
+})->name('admin.addform');
 Route::get('/admin/movies', function () {
     return view('admin.admin_movies');
 });

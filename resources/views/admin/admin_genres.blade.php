@@ -1,15 +1,13 @@
 @extends('layouts.admin')
 @section('content')
-    <!--<div style="color:white">
-        @foreach ($genres as $genre)
-        <div>{{ $genre->genre_name }}</div>
-        @endforeach
-    </div>
-    {{ $genres->links() }}!-->
-
-
     @vite(['resources/css/admin/genre.css'])
+    
+    
       <main>
+        <div class="add-btn-container">
+          <a href="/admin/genre/add-form"><button class="add-btn">+ Add Genre</button></a>
+        </div>
+        @if (count($genres)>0)
         <table>
           <thead>
             <tr>
@@ -54,6 +52,9 @@
             @endforeach
           </tbody>
         </table>
+        @else
+          <h1>No genres inserted</h1>
+        @endif
       </main>
       
 @endsection
