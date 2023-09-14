@@ -24,14 +24,16 @@ class AdminController extends Controller
                        'moviecount' => $MovieCount,
                        'reviewcount' => $ReviewCount,
                        'genrecount' => $GenreCount,
+                       'active' => "dashboard",
                     ]);
     }
 
     public function ViewGenre(){
-        $genres = Genre::paginate(3);
+        $genres = Genre::paginate(5);
 
         return view('admin.admin_genres',
-                    ['genres' => $genres]);
+                    ['genres' => $genres,
+                    'active' => "genre"]);
                    
     }
 

@@ -27,7 +27,7 @@
                         </span>
                     </a>
                 </li>
-                <li>
+                <li class="{{$active=="dashboard" ? "hovered" : ""}}">
                     <a href="/admin/dashboard">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
@@ -43,7 +43,7 @@
                         <span class="title">Manage Movies</span>
                     </a>
                 </li>
-                <li>
+                <li class="{{$active=="genre" ? "hovered" : ""}}">
                     <a href="/admin/genre">
                         <span class="icon">
                             <ion-icon name="file-tray-full-outline"></ion-icon>

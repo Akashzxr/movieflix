@@ -8,8 +8,15 @@ function activeLink() {
         item.classList.remove('hovered'));
     this.classList.add('hovered');
 }
+//list.forEach((item) =>
+    //item.addEventListener('mouseover', activeLink));
+
 list.forEach((item) =>
-    item.addEventListener('mouseover', activeLink));
+    item.addEventListener('click', activeLink));
+
+const currentUrl = window.location.href; 
+console.log(currentUrl);
+
 
 // Side Menu Toggle
 let toggle = document.querySelector('.toggle');

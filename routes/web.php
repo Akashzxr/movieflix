@@ -38,8 +38,11 @@ Route::delete('/admin/genre/{id}', [AdminController::class, 'DeleteGenre'])->nam
 Route::post('/admin/genre/add', [AdminController::class, 'AddGenre'])->name('admin.addgenre');
 
 Route::get('/admin/genre/add-form', function () {
-    return view('admin.admin_genre_add');
+   // return view('admin.admin_genre_add');
+    return view('admin.admin_genre_add',
+                ['active' => "addform"]);
 })->name('admin.addform');
+
 Route::get('/admin/movies', function () {
     return view('admin.admin_movies');
 });
