@@ -19,18 +19,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/admin/movies', function () {
-    return view('admin.admin_movies');
-});
-
-
-Route::get('/', function () {
-    return view('auth.login');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified','noadminaccess'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -39,8 +30,15 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::middleware(['nouseraccess','auth'])->group(function () {
 Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.admin_dashboard');
 Route::get('/admin/genre', [AdminController::class, 'ViewGenre'])->name('admin.genre');
 Route::delete('/admin/genre/{id}', [AdminController::class, 'DeleteGenre'])->name('admin.deletegenre');
+Route::get('/admin/movies', function () {
+    return view('admin.admin_movies');
+});
+
+});
 
 //Route::get('/admin/admin_dashboard',[AdminController::class, 'AdminDashboard']);
