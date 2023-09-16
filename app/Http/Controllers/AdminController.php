@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Movie;
 use App\Models\Review;
 use App\Models\Genre;
+use App\Models\Theatre;
 
 class AdminController extends Controller
 {
@@ -28,6 +29,8 @@ class AdminController extends Controller
                     ]);
     }
 
+
+//admin genre functions
     public function ViewGenre(){
         $genres = Genre::paginate(5);
 
@@ -49,6 +52,34 @@ class AdminController extends Controller
          'genre_name' => $request->genre_name,
       ]);
       $genre->save();
-      return Redirect::route('admin.addform');
+      return Redirect::route('admin.genreaddform');
     }
+
+
+    //Admin theatre functions
+    public function ViewTheatre(){
+      $theatres = Theatre::paginate(5);
+
+      return view('admin.admin_theatres',
+                  ['theatres' => $theatres,
+                  'active' => "theatre"]);
+                 
+  }
+
+  public function DeleteTheatre(Request $request, $id): RedirectResponse
+    {
+        Theatre::where('theatre_id',$id)->delete();
+        return Redirect::route('admin.theatre')->with('status', 'theatre-deleted');
+    }
+
+    public function AddTheatre(Request $request): RedirectResponse
+    {
+      $theatre = Theatre::create([
+         'theatre_name' => $request->theatre_name,
+         'location' => $request->theatre_location,
+      ]);
+      $theatre->save();
+      return Redirect::route('admin.theatreaddform');
+    }
+
 }

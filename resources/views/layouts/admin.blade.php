@@ -51,8 +51,8 @@
                         <span class="title">Manage Genre</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="{{$active=="genre" ? "theatre" : ""}}">
+                    <a href="/admin/theatre">
                         <span class="icon">
                             <ion-icon name="tv-outline"></ion-icon>
                         </span>

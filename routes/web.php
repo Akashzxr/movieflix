@@ -34,15 +34,24 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['nouseraccess','auth','verified'])->group(function () {
 Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.admin_dashboard');
+
 Route::get('/admin/genre', [AdminController::class, 'ViewGenre'])->name('admin.genre');
 Route::delete('/admin/genre/{id}', [AdminController::class, 'DeleteGenre'])->name('admin.deletegenre');
 Route::post('/admin/genre/add', [AdminController::class, 'AddGenre'])->name('admin.addgenre');
-
 Route::get('/admin/genre/add-form', function () {
-   // return view('admin.admin_genre_add');
     return view('admin.admin_genre_add',
                 ['active' => "addform"]);
-})->name('admin.addform');
+})->name('admin.genreaddform');
+
+
+Route::get('/admin/theatre', [AdminController::class, 'ViewTheatre'])->name('admin.theatre');
+Route::delete('/admin/theatre/{id}', [AdminController::class, 'Deletetheatre'])->name('admin.deletetheatre');
+Route::post('/admin/theatre/add', [AdminController::class, 'Addtheatre'])->name('admin.addtheatre');
+Route::get('/admin/theatre/add-form', function () {
+    return view('admin.admin_theatre_add',
+                ['active' => "addform"]);
+})->name('admin.theatreaddform');
+
 
 Route::get('/admin/movies', function () {
     return view('admin.admin_movies');
