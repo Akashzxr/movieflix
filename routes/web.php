@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
@@ -31,7 +32,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::middleware(['nouseraccess','auth'])->group(function () {
+Route::middleware(['nouseraccess','auth','verified'])->group(function () {
 Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.admin_dashboard');
 Route::get('/admin/genre', [AdminController::class, 'ViewGenre'])->name('admin.genre');
 Route::delete('/admin/genre/{id}', [AdminController::class, 'DeleteGenre'])->name('admin.deletegenre');

@@ -82,16 +82,12 @@
                                 <input type="text" placeholder="enter your Username" name="username" required>
                             </div>
                             <div class="input_pox">
-                                <span class="datails">Email</span>
-                                <input type="text" placeholder="enter your Email" name="email" required>
-                            </div>
-                            <div class="input_pox">
-                                <span class="datails">Phone Number</span>
-                                <input type="text" placeholder="enter your Phone" name="phone" required>
-                            </div>
-                            <div class="input_pox">
                                 <span class="datails">Password</span>
                                 <input type="text" placeholder="enter your Password" name="password" required>
+                            </div>
+                            <div class="input_pox">
+                                <span class="datails">Email</span>
+                                <input type="text" placeholder="enter your Email" name="email" required>
                             </div>
                             <div class="input_pox">
                                 <span class="datails">Confirm Password</span>

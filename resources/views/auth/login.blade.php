@@ -68,9 +68,15 @@
                     {{ csrf_field() }}
                     <h1>Sign In</h1>
                     <div class="info">
-                        <input class="email" type="email" placeholder="Email or phone number" name="email"> <br>
-                        <input class="email" type="password" placeholder="Password" name="password">
+                        <input class="email" type="email" placeholder="Email or phone number" name="email" required> <br>
+                        <input class="email" type="password" placeholder="Password" name="password" required>
+                        @if ($errors->has('email'))
+                      <span class="error-msg">
+                        {{ $errors->first('email') }}
+                      </span>
+                     @endif
                     </div>
+                    
                     <div class="btn">
                         <button class="btn-primary" type="submit">Sign In</button>
                     </div>
@@ -83,7 +89,6 @@
                 <p>New to Movieflix ?</p>
                 <a href="/register">Sign up now</a>
             </div>
-
         </div>
 
 </header>

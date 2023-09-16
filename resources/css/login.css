@@ -249,3 +249,9 @@ footer {
 	padding-left: 10px;
 	background: #333333;
 }
+
+.error-msg{
+	color: red;
+    display: block;
+    padding-bottom: 26px;
+}

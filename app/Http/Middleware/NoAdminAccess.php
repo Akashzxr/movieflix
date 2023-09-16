@@ -19,7 +19,8 @@ class NoAdminAccess
         $user = Auth::user();
         if($user->role == "admin")
         {
-            return redirect()->back(); //this redirects all non-admins back to their previous url's
+           // return redirect()->back(); //this redirects all non-admins back to their previous url's
+           abort(404);
         }
         else{
         return $next($request);
