@@ -10,6 +10,7 @@ use App\Models\Movie;
 use App\Models\Review;
 use App\Models\Genre;
 use App\Models\Theatre;
+use App\Models\Ott;
 
 class AdminController extends Controller
 {
@@ -20,7 +21,7 @@ class AdminController extends Controller
         $ReviewCount = Review::count();
         $GenreCount = Genre::count();
         //dd($MovieCount);
-        return view('admin.admin_dashboard',
+        return view('admin.dashboard.admin_dashboard',
                      ['usercount' => $UserCount,
                        'moviecount' => $MovieCount,
                        'reviewcount' => $ReviewCount,
@@ -30,11 +31,12 @@ class AdminController extends Controller
     }
 
 
-//admin genre functions
-    public function ViewGenre(){
+//---------------------admin genre functions---------------------------------
+    public function ViewGenre()
+    {
         $genres = Genre::paginate(5);
 
-        return view('admin.admin_genres',
+        return view('admin.genre.admin_genres',
                     ['genres' => $genres,
                     'active' => "genre"]);
                    
@@ -56,17 +58,17 @@ class AdminController extends Controller
     }
 
 
-    //Admin theatre functions
-    public function ViewTheatre(){
+//------------------Admin theatre functions-----------------------
+    public function ViewTheatre()
+    {
       $theatres = Theatre::paginate(5);
 
-      return view('admin.admin_theatres',
+      return view('admin.theatre.admin_theatres',
                   ['theatres' => $theatres,
-                  'active' => "theatre"]);
-                 
-  }
+                  'active' => "theatre"]);              
+    }
 
-  public function DeleteTheatre(Request $request, $id): RedirectResponse
+    public function DeleteTheatre(Request $request, $id): RedirectResponse
     {
         Theatre::where('theatre_id',$id)->delete();
         return Redirect::route('admin.theatre')->with('status', 'theatre-deleted');
@@ -80,6 +82,38 @@ class AdminController extends Controller
       ]);
       $theatre->save();
       return Redirect::route('admin.theatreaddform');
+    }
+
+
+
+    //------------------Admin theatre functions-----------------------
+    public function ViewOtt()
+    {
+      $ott = Ott::paginate(5);
+      return view('admin.ott.admin_ott',
+                  ['otts' => $ott,
+                  'active' => "ott"]);   
+                 
+    }
+
+    public function AddOtt(Request $request): RedirectResponse
+    {
+      $file = $request->file('ottlogo');
+      $path = $request->file('ottlogo')->store('images','public');
+
+      $ott = Ott::create([
+         'ott_name' => $request->ottname,
+         'ott_logo' => $path,
+      ]);
+      $ott->save();
+      return Redirect::route('admin.ottaddform');
+    }
+
+
+    public function DeleteOtt(Request $request, $id): RedirectResponse
+    {
+        Ott::where('id',$id)->delete();
+        return Redirect::route('admin.ott')->with('status', 'ott-deleted');
     }
 
 }

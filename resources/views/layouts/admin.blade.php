@@ -51,7 +51,7 @@
                         <span class="title">Manage Genre</span>
                     </a>
                 </li>
-                <li class="{{$active=="genre" ? "theatre" : ""}}">
+                <li class="{{$active=="theatre" ? "hovered" : ""}}">
                     <a href="/admin/theatre">
                         <span class="icon">
                             <ion-icon name="tv-outline"></ion-icon>
@@ -59,8 +59,8 @@
                         <span class="title">Manage Theatre</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="{{$active=="ott" ? "hovered" : ""}}">
+                    <a href="/admin/ott">
                         <span class="icon">
                             <ion-icon name="logo-youtube"></ion-icon>
                         </span>
