@@ -14,4 +14,22 @@ class Movie extends Model
      * @var string
      */
     protected $table = 'movies';
+    protected $fillable = [
+        'movie_name',
+        'genres',
+        'director',
+        'producers',
+        'writters',
+        'actors',
+        'description',
+        'movie_image',
+        'trailer_link',
+        'rating',
+        'release_date',
+        'runtime',
+        'theatres',
+        'showtimes',
+        'ott_platform',
+        'ott_link'
+    ];
 }

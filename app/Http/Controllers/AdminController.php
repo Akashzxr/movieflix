@@ -86,7 +86,7 @@ class AdminController extends Controller
 
 
 
-    //------------------Admin theatre functions-----------------------
+    //------------------Admin ott functions-----------------------
     public function ViewOtt()
     {
       $ott = Ott::paginate(5);
@@ -116,4 +116,51 @@ class AdminController extends Controller
         return Redirect::route('admin.ott')->with('status', 'ott-deleted');
     }
 
+
+
+    //------------------Admin movies functions-----------------------
+    public function ViewMovies()
+    {
+      $movies = Movie::paginate(5);
+      return view('admin.movies.admin_movies',
+                  ['movies'=>$movies,
+                    'active'=>'movies']);            
+    }
+
+    public function MoviesAddForm()
+    {
+      $genres = Genre::get();
+      $theatres = Theatre::get();
+      $ott = Ott::get();
+      return view('admin.movies.admin_movies_add',
+     ['genres'=>$genres,
+       'theatres'=>$theatres,
+       'otts'=>$ott,
+      'active'=>'movies']);       
+    }
+
+    public function MoviesAdd(Request $request): RedirectResponse
+    {
+      $file = $request->file('image');
+      $path = $request->file('image')->store('images','public');
+      $movie = Movie::create([
+         'movie_name' => $request->movie_name,
+         'genres' => json_encode($request->genre),
+         'director' => $request->director ,
+         'producers' => $request->producers,
+         'writters' => $request->writters,
+         'actors' =>  $request->actors,
+         'description' =>  $request->description,
+         'movie_image' =>  $path,
+         'trailer_link' =>  $request->trailer,
+         'rating' => $request->rating,
+         'release_date' => $request->releasedate,
+         'runtime' => $request->runtime,
+         'theatres' => json_encode($request->theatre),
+         'ott_platform' => $request->ott,
+         'ott_link' => $request->ottlink,
+      ]);
+      $movie->save();
+      return Redirect::route('admin.moviesaddform');
+    }
 }

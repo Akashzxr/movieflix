@@ -52,8 +52,8 @@ Route::get('/admin/theatre', [AdminController::class, 'ViewTheatre'])->name('adm
 Route::delete('/admin/theatre/{id}', [AdminController::class, 'Deletetheatre'])->name('admin.deletetheatre');
 Route::post('/admin/theatre/add', [AdminController::class, 'Addtheatre'])->name('admin.addtheatre');
 Route::get('/admin/theatre/add-form', function () {
-    return view('admin.theatre.admin_theatre_add',
-                ['active' => "addform"]);
+return view('admin.theatre.admin_theatre_add',
+        ['active' => "addform"]);
 })->name('admin.theatreaddform');
 
 
@@ -67,9 +67,10 @@ Route::get('/admin/ott/add-form', function () {
 })->name('admin.ottaddform');
 
 
-Route::get('/admin/movies', function () {
-    return view('admin.admin_movies');
-});
+
+Route::get('/admin/movies', [AdminController::class, 'ViewMovies'])->name('admin.movies');
+Route::get('/admin/movies/add-form', [AdminController::class, 'MoviesAddForm'])->name('admin.moviesaddform');
+Route::post('/admin/movies/add', [AdminController::class, 'MoviesAdd'])->name('admin.moviesadd');
 
 });
 

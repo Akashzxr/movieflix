@@ -31,7 +31,6 @@ class MovieFactory extends Factory
             'release_date' => fake()->text(),
             'runtime' => fake()->text(),
             'theatres' => fake()->text(),
-            'showtimes' => fake()->text(),	
             'ott_platform' => fake()->text(),
             'ott_link' => fake()->text(),
         ];

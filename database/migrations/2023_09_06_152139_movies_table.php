@@ -26,7 +26,6 @@ return new class extends Migration
             $table->string('release_date');
             $table->string('runtime');
             $table->string('theatres')->nullable();
-            $table->string('showtimes')->nullable();
             $table->string('ott_platform')->nullable();
             $table->string('ott_link')->nullable();
             $table->timestamps();

@@ -35,7 +35,7 @@
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
-                <li>
+                <li class="{{$active=="movies" ? "hovered" : ""}}">
                     <a href="/admin/movies">
                         <span class="icon">
                             <ion-icon name="film-outline"></ion-icon>
