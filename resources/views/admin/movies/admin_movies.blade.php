@@ -63,7 +63,7 @@
           </tbody>
         </table>
         @else
-          <h1>No movies inserted</h1>
+          <h1 style="color: white">No movies inserted</h1>
         @endif
       </main>
       

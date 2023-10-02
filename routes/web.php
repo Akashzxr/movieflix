@@ -72,6 +72,9 @@ Route::get('/admin/movies', [AdminController::class, 'ViewMovies'])->name('admin
 Route::get('/admin/movies/add-form', [AdminController::class, 'MoviesAddForm'])->name('admin.moviesaddform');
 Route::post('/admin/movies/add', [AdminController::class, 'MoviesAdd'])->name('admin.moviesadd');
 
+
+Route::get('/admin/profile', [AdminController::class, 'Profile'])->name('admin.profile');
+Route::post('/admin/profile/update', [AdminController::class, 'UpdateProfile'])->name('admin.profileupdate');
 });
 
 //Route::get('/admin/admin_dashboard',[AdminController::class, 'AdminDashboard']);

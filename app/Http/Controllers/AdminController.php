@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Movie;
@@ -163,4 +164,29 @@ class AdminController extends Controller
       $movie->save();
       return Redirect::route('admin.moviesaddform');
     }
+
+//--------------profile--------------------------
+public function Profile()
+{
+    return view('admin.profile.admin_profile',[
+      'active' => 'profile',
+    ]);
+               
+}
+
+public function UpdateProfile(Request $request): RedirectResponse
+{
+  $id = Auth::id();
+  $file = $request->file('image');
+  $path = $request->file('image')->store('images','public');
+  User::where('id', $id)
+      ->update([
+        'name'=>$request->name,
+        'username'=>$request->username,
+        'email'=>$request->email,
+        'avatar'=>$path
+      ]);
+  return Redirect::route('admin.profile');
+}
+
 }

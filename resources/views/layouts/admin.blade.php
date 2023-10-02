@@ -67,8 +67,8 @@
                         <span class="title">Manage OTT</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="{{$active=="profile" ? "hovered" : ""}}">
+                    <a href="/admin/profile">
                         <span class="icon">
                             <ion-icon name="person-circle-outline"></ion-icon>
                         </span>
@@ -91,23 +91,29 @@
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
-                <!-- Search -->
+                <!-- Search 
                 <div class="search">
                     <label>
                         <input type="text" name="search" placeholder="Search Here...">
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
+                -->
                 <!-- User Account -->
                 <div class="user">
-                    <img src="/images/user/user.jpg" alt="user image">
+                    @if($user->avatar==null)
+                    <img src="/images/user/user.jpg" alt="Profile Image">
+                    @else
+                    <img src="/storage/{{$user->avatar}}" alt="Profile Image">
+                    @endif
+                   
                 </div>
                 <div class="accountMenu">
                     <h3>{{ $user->name }}<br /><span>{{ $user->email }}</span></h3>
                     <ul>
                         <li>
                             <img src="/images/user/user.png" alt="profile">
-                            <a href="#">My Profile</a>
+                            <a href="/admin/profile">My Profile</a>
                         </li>
                         <li>
                             <img src="/images/user/log-out.png" alt="profile">

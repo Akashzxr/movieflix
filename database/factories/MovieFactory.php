@@ -18,7 +18,7 @@ class MovieFactory extends Factory
     public function definition(): array
     {
         return [
-            'movie_name'=> fake()->name(),
+           /* 'movie_name'=> fake()->name(),
             'genres' => fake()->text(),
             'director' => fake()->unique()->safeEmail(),
             'producers' => fake()->text(),
@@ -32,7 +32,7 @@ class MovieFactory extends Factory
             'runtime' => fake()->text(),
             'theatres' => fake()->text(),
             'ott_platform' => fake()->text(),
-            'ott_link' => fake()->text(),
+            'ott_link' => fake()->text(),*/
         ];
     }
 }

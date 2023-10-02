@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('producers');
             $table->string('writters');
             $table->string('actors');
-            $table->string('description');
+            $table->longText('description');
             $table->string('movie_image');
             $table->string('trailer_link');
             $table->integer('rating');
