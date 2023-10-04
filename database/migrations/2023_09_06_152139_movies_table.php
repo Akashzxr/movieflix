@@ -28,6 +28,8 @@ return new class extends Migration
             $table->string('theatres')->nullable();
             $table->string('ott_platform')->nullable();
             $table->string('ott_link')->nullable();
+            $table->string('imdb_id')->nullable();
+            $table->string('movie_link')->nullable();
             $table->timestamps();
         });
     }

@@ -144,6 +144,7 @@ class AdminController extends Controller
     {
       $file = $request->file('image');
       $path = $request->file('image')->store('images','public');
+      //dd($request);
       $movie = Movie::create([
          'movie_name' => $request->movie_name,
          'genres' => json_encode($request->genre),
@@ -160,9 +161,19 @@ class AdminController extends Controller
          'theatres' => json_encode($request->theatre),
          'ott_platform' => $request->ott,
          'ott_link' => $request->ottlink,
+         'imdb_id' => $request->imdbid,
+         'movie_link'=> $request->movielink,
       ]);
       $movie->save();
       return Redirect::route('admin.moviesaddform');
+    }
+
+    public function MovieCard()
+    {
+      
+      return view('admin.movies.admin_moviecard',
+     [
+      'active'=>'movies']);       
     }
 
 //--------------profile--------------------------

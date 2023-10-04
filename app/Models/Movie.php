@@ -30,6 +30,8 @@ class Movie extends Model
         'theatres',
         'showtimes',
         'ott_platform',
-        'ott_link'
+        'ott_link',
+        'imdb_id',
+        'movie_link',
     ];
 }

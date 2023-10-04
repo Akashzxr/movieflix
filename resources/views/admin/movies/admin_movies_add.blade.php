@@ -15,6 +15,7 @@
     <section class="get-in-touch">
         <form class="contact-form row" action="/admin/movies/add" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
+           
            <div class="form-field col x-100">
               <input id="movie_name"  class="input-text js-input" type="text" name="movie_name" required>
               <label class="label" for="movie_name">Movie Name</label>
@@ -93,6 +94,16 @@
              <div class="form-field col x-100">
                <input id="ottlink"  class="input-text js-input" type="url" name="ottlink" required>
                <label class="label" for="trailer">Ott URL</label>
+            </div>
+
+            <div class="form-field col x-100">
+               <input id="imdbid"  class="input-text js-input" type="text" name="imdbid" required>
+               <label class="label"  for="imdbid">IMDB Id</label>
+            </div>
+
+            <div class="form-field col x-100">
+               <input id="movielink"  class="input-text js-input" type="url" name="movielink" required>
+               <label class="label"  for="movielink">Movie Link</label>
             </div>
             
              <div class="form-field col x-100">

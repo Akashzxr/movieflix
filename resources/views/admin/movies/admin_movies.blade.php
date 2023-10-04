@@ -57,6 +57,11 @@
                   delete
                 </button>
               </form>
+              <a href="/admin/moviecard">
+              <button type="button" class='button'>
+                View
+              </button>
+             </a>
               </td>
             </tr>
             @endforeach

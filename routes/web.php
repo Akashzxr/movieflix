@@ -76,5 +76,6 @@ Route::post('/admin/movies/add', [AdminController::class, 'MoviesAdd'])->name('a
 Route::get('/admin/profile', [AdminController::class, 'Profile'])->name('admin.profile');
 Route::post('/admin/profile/update', [AdminController::class, 'UpdateProfile'])->name('admin.profileupdate');
 });
+Route::get('/admin/moviecard', [AdminController::class, 'MovieCard'])->name('admin.moviecard');
 
 //Route::get('/admin/admin_dashboard',[AdminController::class, 'AdminDashboard']);

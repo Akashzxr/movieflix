@@ -30,6 +30,8 @@ class MovieTableSeeder extends Seeder
             'theatres' => "",
             'ott_platform' => "2",
             'ott_link' => "https://www.primevideo.com/detail/amzn1.dv.gti.f50f8c44-66ba-4e83-94bb-82fb40c52159",
+            'imdb_id' => "tt1877830",
+            'movie_link'=> "https://www.2embed.cc/embed/tt1877830",
             ],
             [
                 'movie_name'=> "Spider-Man: Across the Spider-Verse",
@@ -47,6 +49,8 @@ class MovieTableSeeder extends Seeder
                 'theatres' => "",
                 'ott_platform' => "2",
                 'ott_link' => "https://www.primevideo.com/detail/amzn1.dv.gti.87f7ea62-3ae7-4236-b955-c1f21da58d91",
+                'imdb_id' => "tt9362722",
+                'movie_link'=> "https://www.2embed.cc/embed/tt9362722"
                 ],
         ]);
     }
