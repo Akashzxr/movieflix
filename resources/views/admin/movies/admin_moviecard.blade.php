@@ -15,18 +15,22 @@
   </head>
   <body>
     
-    <main class="movie-info" style="height: 640px">
+    <main class="movie-info" style="height: 640px;background: url(/storage/{{$movie->movie_image}}) no-repeat center / cover;">
       <div class="centered-container">
-        <img src="https://netology-code.github.io/Education-Show/img/title.png">
+        <h1>{{$movie->movie_name}}</h1>
         <div class="movie-meta">
-           <span class="movie-duration">2 сезона</span>
-           <span class="movie-year">2019</span>
-           <span class="movie-lang">РУС / ENG</span>
+           <span class="movie-duration">{{$movie->runtime}}</span>
+           <span class="movie-year">{{$movie->rating}}(imdb)</span>
          </div>
-        <p>История Лиры начинается в Оксфорде, где она живет под присмотром своего дяди лорда Азриела. Она ведет уединённую жизнь в окружении учителей и студентов. Когда судьба столкнет ее с загадочной миссис Коултер, девочка отправится в опасное и полное приключений путешествие в Лондон, а затем и дальше — на Северный полюс.<p>
+        <p>
+          {{$movie->description}}
+        <p>
+        <div class="starring-container">
+            <span class="starring">Starring:</span><div>  {{$movie->actors}}</div>
+        </div>
         <div class="btn-block">
-          <button class="btn-watch">Смотреть</button>
-          <button class="btn-wait">Посмотреть позже</button>
+          <button class="btn-watch">Watch</button>
+          <button class="btn-wait">Play Trailer</button>
         </div>
       </div>
     </main>
@@ -34,11 +38,18 @@
     <aside class="additional-info">
       <div class="centered-container _dotted">
         <section class="section movie-details">
-          <h2 class="section-header">Детали</h2>
-          <p class="movie-details-text"><span class="movie-details-highlight">В главных ролях:</span> Дафни Кин, Джеймс МакЭвой, Рут Уилсон, Лин-Мануэль Миранда, Кларк Питерс, Иэн Гелдер, Уилл Кин, Эрион Бакаре, Джорджина Кэмпбелл, Энн-Мэри Дафф</p>
-          <p class="movie-details-text"><span class="movie-details-highlight">Режиссер:</span> Джейми Чайлдс</p>
-          <p class="movie-details-text"><span class="movie-details-highlight">Жанр:</span> фэнтези, драма, приключения, семейный</p>
-          <p class="movie-details-text"><span class="movie-details-highlight">Время:</span> 1ч 00мин</p>
+          <h2 class="section-header">Movie Details</h2>
+          <p class="movie-details-text"><span class="movie-details-highlight">MOVIE NAME</span> {{$movie->movie_name}}</p>
+          <p class="movie-details-text"><span class="movie-details-highlight">RATING</span> {{$movie->rating}}(imdb)</p>
+          <p class="movie-details-text"><span class="movie-details-highlight">RUNTIME</span> {{$movie->runtime}}</p>
+          <p class="movie-details-text"><span class="movie-details-highlight">RELEASE DATE</span> {{$movie->release_date}}</p>
+          <p class="movie-details-text"><span class="movie-details-highlight">DESCRIPTION</span> {{$movie->description}}</p>
+          <p class="movie-details-text"><span class="movie-details-highlight">GENRES</span> Джейми Чайлдс</p>
+          <p class="movie-details-text"><span class="movie-details-highlight">DIRECTOR</span> {{$movie->director}}</p>
+          <p class="movie-details-text"><span class="movie-details-highlight">ACTORS</span> {{$movie->actors}}</p>
+          <p class="movie-details-text"><span class="movie-details-highlight">PRODUCERS</span> {{$movie->producers}}</p>
+          <p class="movie-details-text"><span class="movie-details-highlight">WRITTERS</span> {{$movie->writters}}</p>
+        
         </section>
       </div>  
     </aside>

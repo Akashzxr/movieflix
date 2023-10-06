@@ -57,11 +57,14 @@
                   delete
                 </button>
               </form>
-              <a href="/admin/moviecard">
-              <button type="button" class='button'>
+              <form action="/admin/moviecard/{{$movie->movie_id}}" method="get">
+                @csrf
+                {{ csrf_field() }}
+              <button type="submit" class='button'>
                 View
               </button>
-             </a>
+             </form>
+             
               </td>
             </tr>
             @endforeach

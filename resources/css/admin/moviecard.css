@@ -13,6 +13,7 @@
   
   .centered-container {
     width: 1220px;
+    margin-top: 6rem;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
@@ -180,6 +181,7 @@
   
   .movie-details-highlight {
     font-weight: 700;
+    color: red;
   }
   
   .movie-details-highlight {
@@ -221,8 +223,8 @@
   
   .movie-meta span {
     padding: 0 3px;
-    border: 1px solid currentColor;
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 600;
   }
   
   .movie-meta span + span {
@@ -260,7 +262,7 @@
   .movie-info {
     padding: 125px 0px 105px;
     color: white;
-    background: url("https://netology-code.github.io/Education-Show/img/background-w-veil.jpg") no-repeat center / cover;
+    
   }
   
   .movie-info img {
@@ -270,9 +272,33 @@
   
   .movie-info p {
     width: 530px;
-    font-size: 16px;
+    font-size: 1.1rem;
+    line-height: 25px;
     font-height: 1.375px;
     margin-top: 30px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .starring-container{
+    display: flex;
+    align-items: center;
+  }
+
+  .starring-container div{
+    width: 27rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .starring{
+    color: red;
+    font-weight:600;
+    font-size:1.1rem;
   }
   
   .btn-block {
@@ -283,7 +309,7 @@
     border: none;
   }
   
-  .btn-watch {
+  .btn-watch,.btn-wait {
     padding: 10px 25px;
     background-color: #cc364e;
     border-radius: 23px;
@@ -292,24 +318,14 @@
     font-size: 18px;
   }
   
-  .btn-watch:hover {
+  .btn-watch:hover,.btn-wait:hover {
     background-color: #E02A48;
   }
   
   .btn-wait {
-    background-color: transparent;
-    color: white;
-    text-transform: uppercase;
-    font-size: 15px;
-    text-decoration: underline;
     margin-left: 25px;
   }
-  
-  .btn-wait:hover{
-    color: red;
-    text-decoration: none;
-    font-weight: bold;
-  }
+
   
   .banner {
     width: 265px;

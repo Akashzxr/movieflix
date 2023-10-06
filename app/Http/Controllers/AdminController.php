@@ -168,13 +168,17 @@ class AdminController extends Controller
       return Redirect::route('admin.moviesaddform');
     }
 
-    public function MovieCard()
+    public function MovieCard(Request $request, $id)
     {
+      $movie = Movie::firstWhere('movie_id',$id);
       
+     // dd($movie);
       return view('admin.movies.admin_moviecard',
      [
-      'active'=>'movies']);       
-    }
+      'active'=>'movies',
+      'movie' => $movie,
+    ]);       
+   }
 
 //--------------profile--------------------------
 public function Profile()

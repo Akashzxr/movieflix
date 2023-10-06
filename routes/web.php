@@ -51,6 +51,7 @@ Route::get('/admin/genre/add-form', function () {
 Route::get('/admin/theatre', [AdminController::class, 'ViewTheatre'])->name('admin.theatre');
 Route::delete('/admin/theatre/{id}', [AdminController::class, 'Deletetheatre'])->name('admin.deletetheatre');
 Route::post('/admin/theatre/add', [AdminController::class, 'Addtheatre'])->name('admin.addtheatre');
+
 Route::get('/admin/theatre/add-form', function () {
 return view('admin.theatre.admin_theatre_add',
         ['active' => "addform"]);
@@ -71,11 +72,12 @@ Route::get('/admin/ott/add-form', function () {
 Route::get('/admin/movies', [AdminController::class, 'ViewMovies'])->name('admin.movies');
 Route::get('/admin/movies/add-form', [AdminController::class, 'MoviesAddForm'])->name('admin.moviesaddform');
 Route::post('/admin/movies/add', [AdminController::class, 'MoviesAdd'])->name('admin.moviesadd');
+Route::get('/admin/moviecard/{id}', [AdminController::class, 'MovieCard'])->name('admin.moviecard');
 
 
 Route::get('/admin/profile', [AdminController::class, 'Profile'])->name('admin.profile');
 Route::post('/admin/profile/update', [AdminController::class, 'UpdateProfile'])->name('admin.profileupdate');
 });
-Route::get('/admin/moviecard', [AdminController::class, 'MovieCard'])->name('admin.moviecard');
+
 
 //Route::get('/admin/admin_dashboard',[AdminController::class, 'AdminDashboard']);
