@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('actors');
             $table->longText('description');
             $table->string('movie_image');
-            $table->string('trailer_link');
+            $table->longText('trailer_link');
             $table->integer('rating');
             $table->string('release_date');
             $table->string('runtime');

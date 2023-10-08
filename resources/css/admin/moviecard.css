@@ -18,6 +18,8 @@
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
+    position: relative;
+    z-index: 1;
   }
   
   html {
@@ -73,6 +75,49 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+  }
+
+  .video{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+
+.shade{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(91deg, #000000c4 31%, #ffffff00);
+}
+
+  .movie{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    z-index: 2;
+  }
+
+  .trailer-container,.movie-container{
+    display: none;
+  }
+
+  .videoclose{
+    position: absolute;
+    z-index: 3;
+    top: 24px;
+    right: 33px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 19px;
+    font-weight: 400;
+  }
+
+  .videoclose ion-icon{
+    width: 27px;
+    height: 27px;
   }
   
   .search-button {
@@ -168,7 +213,22 @@
     letter-spacing: 0.2em;
     color: #CC364E;
   }
-  
+  .ott-logo{
+    width: 4%;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+  }
+
+  .ott-span{
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .movie-details-text a{
+    color: white;
+    text-decoration: revert;
+  }
+
   .movie-details-text {
     font-size: 16px;
     line-height: 22px;
@@ -306,24 +366,33 @@
   }
   
   .btn-block button {
-    border: none;
+   /* border: none;*/
   }
   
   .btn-watch,.btn-wait {
     padding: 10px 25px;
-    background-color: #cc364e;
-    border-radius: 23px;
+    background-color: red;
+    border-radius: 6px;
+    border: none;
     color: white;
     text-transform: uppercase;
     font-size: 18px;
+    align-items: center;
+    display: inline-flex
+  }
+
+  .btn-wait:hover{
+    background-color: black;
   }
   
-  .btn-watch:hover,.btn-wait:hover {
+  .btn-watch:hover {
     background-color: #E02A48;
   }
   
   .btn-wait {
     margin-left: 25px;
+    background-color: transparent;
+    border: 1px solid white;
   }
 
   

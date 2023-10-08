@@ -171,12 +171,21 @@ class AdminController extends Controller
     public function MovieCard(Request $request, $id)
     {
       $movie = Movie::firstWhere('movie_id',$id);
-      
-     // dd($movie);
+      $ott = Ott::firstWhere('id',$movie->ott_platform);
+      $genre_id = json_decode($movie->genres);
+      $genres = [];
+
+      for($i=0;$i<count($genre_id);$i++){
+        $genre = Genre::firstWhere('genre_id',$genre_id[$i]);
+        array_push($genres,$genre);
+      };
+     // dd($ott);
       return view('admin.movies.admin_moviecard',
      [
       'active'=>'movies',
       'movie' => $movie,
+      'genres' => $genres,
+      'ott' => $ott,
     ]);       
    }
 
