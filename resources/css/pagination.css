@@ -2,6 +2,7 @@
     display: flex;
     gap: 15px;
     font-size: 2.1rem;
+    align-items: baseline;
 }
 
 .pagination li{
@@ -11,6 +12,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: solid 2px #191c24;
+    -webkit-transition:border  2s ease-out;
+    -moz-transition:border  2s ease-out;
+    -o-transition:border  2s ease-out;
+    transition: border 2s ease-out
 }
 
 .pagination a{
@@ -21,12 +27,14 @@
 }
 
 .pagination li:hover{
-    background-color: grey;
+    background-color: inherit;
+    border: solid 2px #5e825f;
 }
 
 .pagination .active{
-    background-color: red;
-    color: black;
+    background-color: inherit;
+    border: solid 2px red;
+    color: red;
 }
 
 .paination .disabled{

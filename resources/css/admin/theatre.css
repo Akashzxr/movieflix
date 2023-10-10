@@ -53,76 +53,53 @@
     text-align: center;
     font-weight: 300;
   }
-  
-  table {
-    display: block;
+
+  table{
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    width: 80%;
   }
-  
-  tr, td, tbody, tfoot {
-    display: block;
+
+  thead{
+    background-color: rgb(31 41 55);
+    color: red;
   }
-  
-  thead {
-    display: none;
+
+  th{
+    padding: 1.35rem;
   }
-  
-  tr {
-    padding-bottom: 10px;
+
+  tr{
+    background-color: #191c24;
   }
-  
-  td {
-    padding: 10px 10px 0;
+
+  td{
+    padding: 1.35rem;
     text-align: center;
   }
-  td:before {
-    content: attr(data-title);
-    color: #7a91aa;
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    padding-right: 10px;
-    display: block;
+
+  tfoot tr th{
+    border-radius: 10px 10px 10px 10px;
   }
   
-  table {
-    width: 90%;
+   tr td:nth-child(1),thead tr th:nth-child(1) {
+    border-radius: 0.625rem 0 0 0.625rem;
   }
-  
-  th {
-    text-align: left;
-    font-weight: 700;
-  }
-  
-  thead th {
-    background-color: #202932;
-    color: #fff;
-    border: 1px solid #202932;
-  }
-  
-  tfoot th {
-    display: block;
-    padding: 10px;
-    text-align: center;
-    color: #b8c4d2;
-    border: 1px solid #28333f;
-  }
-  
+
+  tr td:nth-child(n+4),thead tr th:nth-child(n+4) {
+    border-radius: 0 0.625rem 0.625rem 0;
+}
+
   .button {
     line-height: 1;
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 16px;
+    border: none;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     color: #fff;
     padding: 8px;
-    background-color: #4b908f;
-  }
-  
-  .select {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #28333f;
-  }
-  .select:before {
-    display: none;
+    background-color: #da0000;
   }
   
   .detail {
@@ -175,68 +152,6 @@
   }
   
   
-  @media (min-width: 460px) {
-    td {
-      text-align: left;
-    }
-    td:before {
-      display: inline-block;
-      text-align: right;
-      width: 140px;
-    }
-  
-    .select {
-      padding-left: 160px;
-    }
-  }
-  @media (min-width: 720px) {
-    table {
-      display: table;
-    }
-  
-    tr {
-      display: table-row;
-    }
-  
-    td, th {
-      display: table-cell;
-    }
-  
-    tbody {
-      display: table-row-group;
-    }
-  
-    thead {
-      display: table-header-group;
-    }
-  
-    tfoot {
-      display: table-footer-group;
-    }
-  
-    td {
-      border: 1px solid #28333f;
-    }
-    td:before {
-      display: none;
-    }
-  
-    td, th {
-      padding: 10px;
-    }
-  
-    tr:nth-child(2n+2) td {
-      background-color: #242e39;
-    }
-  
-    tfoot th {
-      display: table-cell;
-    }
-  
-    .select {
-      padding: 10px;
-    }
-  }
 
   /*form*/
   @import url(https://fonts.googleapis.com/css?family=Raleway:300);

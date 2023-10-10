@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-    @vite(['resources/css/admin/genre.css'])
+
     @vite(['resources/css/admin/ott.css'])
     
       <main>
@@ -52,7 +52,7 @@
                   @csrf
                   {{ csrf_field() }}
                 <button type="submit" class='button'>
-                  delete
+                  <ion-icon name="trash-outline"></ion-icon>
                 </button>
               </form>
               </td>

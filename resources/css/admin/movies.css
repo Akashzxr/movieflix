@@ -6,6 +6,10 @@ p{
     width: 23rem;
 }
 
+td p,td{
+  color: white;
+}
+
 .single-dropdown{
     background-color: inherit;
     color: steelblue;
@@ -75,6 +79,69 @@ input[type="date"]{
     font-weight: 300;
   }
   
+  
+  table{
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    width: 80%;
+  }
+
+  thead{
+    background-color: rgb(31 41 55);
+    color: red;
+  }
+
+  th{
+    padding: 1.35rem;
+  }
+
+  tr{
+    background-color: #191c24;
+  }
+
+  td{
+    padding: 1.35rem;
+    text-align: center;
+  }
+
+  tfoot tr th{
+    border-radius: 10px 10px 10px 10px;
+  }
+  
+   tr td:nth-child(1),thead tr th:nth-child(1) {
+    border-radius: 0.625rem 0 0 0.625rem;
+  }
+
+  tr td:nth-child(n+5),thead tr th:nth-child(n+5) {
+    border-radius: 0 0.625rem 0.625rem 0;
+    display: flex;
+    gap: 14px;
+}
+
+.view-btn{
+   line-height: 1;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    text-decoration: none;
+    border-radius: 6px;
+    color: #fff;
+    padding: 8px;
+    background-color: #245612;
+}
+  .button {
+    line-height: 1;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    text-decoration: none;
+    border-radius: 6px;
+    color: #fff;
+    padding: 8px;
+    background-color: #da0000;
+  }
+  
+  /*
   table {
     display: block;
   }
@@ -137,7 +204,7 @@ input[type="date"]{
     color: #fff;
     padding: 8px;
     background-color: #4b908f;
-  }
+  }*/
   
   .select {
     padding-bottom: 20px;
@@ -198,66 +265,7 @@ input[type="date"]{
   
   
   @media (min-width: 460px) {
-    td {
-      text-align: left;
-    }
-    td:before {
-      display: inline-block;
-      text-align: right;
-      width: 140px;
-    }
-  
-    .select {
-      padding-left: 160px;
-    }
-  }
-  @media (min-width: 720px) {
-    table {
-      display: table;
-    }
-  
-    tr {
-      display: table-row;
-    }
-  
-    td, th {
-      display: table-cell;
-    }
-  
-    tbody {
-      display: table-row-group;
-    }
-  
-    thead {
-      display: table-header-group;
-    }
-  
-    tfoot {
-      display: table-footer-group;
-    }
-  
-    td {
-      border: 1px solid #28333f;
-    }
-    td:before {
-      display: none;
-    }
-  
-    td, th {
-      padding: 10px;
-    }
-  
-    tr:nth-child(2n+2) td {
-      background-color: #242e39;
-    }
-  
-    tfoot th {
-      display: table-cell;
-    }
-  
-    .select {
-      padding: 10px;
-    }
+    
   }
 
   /*form*/

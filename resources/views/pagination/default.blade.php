@@ -5,11 +5,11 @@
             <div></div>
             {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
-                <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
+                <li class="disabled pagination-left" aria-disabled="true" aria-label="@lang('pagination.previous')">
                     <span aria-hidden="true">&laquo;</span>
                 </li>
             @else
-                <li>
+                <li class=" pagination-extreme pagination-left">
                     <a href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">&laquo;</a>
                 </li>
             @endif
@@ -25,9 +25,9 @@
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
                         @if ($page == $paginator->currentPage())
-                            <li class="active" aria-current="page"><span>{{ $page }}</span></li>
+                            <li class="active pagination-right" aria-current="page"><span>{{ $page }}</span></li>
                         @else
-                            <li><a href="{{ $url }}">{{ $page }}</a></li>
+                            <li class="pagination-right"><a href="{{ $url }}">{{ $page }}</a></li>
                         @endif
                     @endforeach
                 @endif

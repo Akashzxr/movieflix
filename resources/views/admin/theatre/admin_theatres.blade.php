@@ -2,8 +2,7 @@
 @section('content')
     @vite(['resources/css/admin/theatre.css'])
     
-    
-      <main>
+   <main>
         <div class="add-btn-container">
           <a href="/admin/theatre/add-form"><button class="add-btn">+ Add theatre</button></a>
         </div>
@@ -25,6 +24,7 @@
               </th>
             </tr>
           </thead>
+          @if($theatres->links()!="")
           <tfoot>
             <tr>
               <th colspan='4'>
@@ -32,25 +32,26 @@
               </th>
             </tr>
           </tfoot>
+          @endif
           <tbody>
             @foreach ($theatres as $theatre)
             <tr>
               <td data-title='Provider Name'>
                 {{ $theatre->theatre_id }}
               </td>
-              <td data-title='E-mail'>
+              <td>
                 {{ $theatre->theatre_name }}
               </td>
-              <td data-title='theatre-location'>
+              <td >
                 {{ $theatre->location }}
               </td>
-              <td class='select'>
+              <td>
                 <form action="/admin/theatre/{{$theatre->theatre_id}}" method="POST">
                   @method('DELETE')
                   @csrf
                   {{ csrf_field() }}
                 <button type="submit" class='button'>
-                  delete
+                  <ion-icon name="trash-outline"></ion-icon>
                 </button>
               </form>
               </td>
@@ -62,5 +63,4 @@
           <h1>No theatres inserted</h1>
         @endif
       </main>
-      
 @endsection

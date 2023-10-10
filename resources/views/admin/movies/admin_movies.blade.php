@@ -26,6 +26,7 @@
               </th>
             </tr>
           </thead>
+          @if($movies->links()!="")
           <tfoot>
             <tr>
               <th colspan='5'>
@@ -33,35 +34,36 @@
               </th>
             </tr>
           </tfoot>
+          @endif
           <tbody>
             @foreach ($movies as $movie)
             <tr>
-              <td data-title='Provider Name'>
+              <td>
                 {{ $movie->movie_id }}
               </td>
-              <td data-title='E-mail'>
+              <td>
                <p> {{ $movie->movie_name }}</p>
               </td>
-              <td data-title='E-mail'>
+              <td>
                <p> {{ $movie->director }}</p>
               </td>
-              <td data-title='E-mail'>
+              <td>
                 <p>{{ $movie->producers }}</p>
               </td>
-              <td class='select'>
+              <td>
                 <form action="/admin/movies/{{$movie->movie_id}}" method="POST">
                   @method('DELETE')
                   @csrf
                   {{ csrf_field() }}
                 <button type="submit" class='button'>
-                  delete
+                  <ion-icon name="trash-outline"></ion-icon>
                 </button>
               </form>
               <form action="/admin/moviecard/{{$movie->movie_id}}" method="get">
                 @csrf
                 {{ csrf_field() }}
-              <button type="submit" class='button'>
-                View
+              <button type="submit" class='view-btn'>
+                <ion-icon name="eye-outline"></ion-icon>
               </button>
              </form>
              

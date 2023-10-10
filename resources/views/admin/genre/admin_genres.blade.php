@@ -22,6 +22,7 @@
               </th>
             </tr>
           </thead>
+          @if($genres->links()!="")
           <tfoot>
             <tr>
               <th colspan='3'>
@@ -29,22 +30,23 @@
               </th>
             </tr>
           </tfoot>
+          @endif
           <tbody>
             @foreach ($genres as $genre)
             <tr>
-              <td data-title='Provider Name'>
+              <td>
                 {{ $genre->genre_id }}
               </td>
-              <td data-title='E-mail'>
+              <td>
                 {{ $genre->genre_name }}
               </td>
-              <td class='select'>
+              <td>
                 <form action="/admin/genre/{{$genre->genre_id}}" method="POST">
                   @method('DELETE')
                   @csrf
                   {{ csrf_field() }}
                 <button type="submit" class='button'>
-                  delete
+                  <ion-icon name="trash-outline"></ion-icon>
                 </button>
               </form>
               </td>
