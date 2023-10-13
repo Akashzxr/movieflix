@@ -38,6 +38,30 @@ class GenreTableSeeder extends Seeder
                 [
                     'genre_name'=>'Fantasy',
                 ],
+
+                [
+                    'genre_name'=>'Animation',
+                ],
+
+                [
+                    'genre_name'=>'Comedy',
+                ],
+
+                [
+                    'genre_name'=>'Crime',
+                ],
+
+                [
+                    'genre_name'=>'Adventure',
+                ],
+
+                [
+                    'genre_name'=>'Sport',
+                ],
+
+                [
+                    'genre_name'=>'Sci-fi',
+                ],
                
             ]);
     }

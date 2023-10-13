@@ -22,12 +22,12 @@ return new class extends Migration
             $table->longText('description');
             $table->string('movie_image');
             $table->longText('trailer_link');
-            $table->integer('rating');
+            $table->float('rating');
             $table->string('release_date');
             $table->string('runtime');
             $table->string('theatres')->nullable();
             $table->string('ott_platform')->nullable();
-            $table->string('ott_link')->nullable();
+            $table->longText('ott_link')->nullable();
             $table->string('imdb_id')->nullable();
             $table->string('movie_link')->nullable();
             $table->timestamps();

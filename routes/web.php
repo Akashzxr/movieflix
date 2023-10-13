@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,13 +17,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified','noadminaccess'])->name('dashboard');
+//user section---------------------------------------
+Route::middleware(['noadminaccess','auth','verified'])->group(function () {
+
+    Route::get('/dashboard', [UserController::class, 'Dashboard'])->name('user.dashboard');
+    Route::get('/movie/{id}', [UserController::class, 'MovieCard'])->name('user.moviecard');
+    Route::get('/user/about', function () {
+        return view('user.about');
+    });
+
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -31,6 +39,9 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+//admin section------------------------------------
 
 Route::middleware(['nouseraccess','auth','verified'])->group(function () {
 Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.admin_dashboard');

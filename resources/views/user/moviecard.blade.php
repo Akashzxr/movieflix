@@ -1,7 +1,7 @@
-@extends('layouts.admin')
+@extends('layouts.user')
 @section('content')
 
-    @vite(['resources/css/admin/moviecard.css'])
+    @vite(['resources/css/user/moviecard.css'])
 
     <!DOCTYPE html>
 <html lang="ru">
@@ -21,7 +21,8 @@
       <div class="videoclose">
         <ion-icon name="close-circle-outline" id="trailer-close"></ion-icon><span>close</span>
       </div>
-      <video class="video" id="video" controls name="media"><source src="{{$movie->trailer_link}}" type="video/mp4"></video>
+      <iframe class="video" id="video" width="560" height="315" src="https://www.youtube.com/embed/Po3jStA673E?si=p_wzf3B05xoORnGa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+     <!-- <video class="video" id="video" controls name="media"><source src="{{$movie->trailer_link}}" type="video/mp4"></video>!-->
     </div>
 
     <!---movie watch!-->

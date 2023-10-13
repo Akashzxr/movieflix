@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Helvetica Neue Regular';
-	src: url(./HelveticaNeueBold.woff);
+	src: url(/resources/css/user/HelveticaNeueBold.woff);
 }
 * {
 	margin:0;
@@ -248,7 +248,7 @@ h1#logo img{
 	position: absolute;
     bottom: 0;
     top: 0;
-    margin-top: 6%;
+    margin-top: 10%;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -260,9 +260,32 @@ h1#logo img{
 	color: red;
 }
 
+.star{
+	color: gold;
+	padding-left: 18px;
+	font-size: 24px;
+}
+
+.rating{
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.rating span{
+	font-weight: bold;
+    font-size: 20px;
+}
+
+.rating span span{
+	font-weight: 400;
+    font-size: 16px;
+}
+
 .movie-head-s{
-	font-size: 7em;
-	background: url(../css/images/texure.jpg);
+	font-size: 4em;
+    width: 42rem;
+	background: url(/public/images/texure.jpg);
     background-repeat: repeat-x;
     background-position: 100% 100%;
     color: transparent;
@@ -289,17 +312,39 @@ h1#logo img{
 .movie-description-s{
 	font-size: 1.3em;
     color: white;
+    width: 530px;
+    font-size: 1.1rem;
+    line-height: 25px;
+    margin-top: 30px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.p-btn-s{
-	background: #bf000a;
+.p-btn-s,.trailer-btn{
+	padding: 10px 25px;
+    background-color: red;
+    border-radius: 6px;
     border: none;
     color: white;
-    width: 12rem;
-    height: 3rem;
-    font-size: 1.3em;
+    text-transform: uppercase;
+    font-size: 18px;
+    align-items: center;
+    display: inline-flex
 }
 
+.trailer-btn {
+    margin-left: 25px;
+    background-color: transparent;
+    border: 1px solid white;
+  }
+
+.trailer-btn:hover{
+    background-color: black;
+  }
+  
 .p-btn-s:hover{
 	background-color: #8b040b;
 }
@@ -408,6 +453,7 @@ h1#logo img{
 
 .p-btn-card {
 	background: #bf000a;
+	border-radius:6px;
     border: none;
     color: white;
     width: 114px;
