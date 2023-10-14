@@ -2,10 +2,10 @@ var swiper = new Swiper(".mc1", {
     slidesPerView: 3,
     spaceBetween: 20,
     loop: true,
-    /*autoplay: {
-      delay: 2500,
+    autoplay: {
+      delay: 3500,
       disableOnInteraction: false,
-    },*/
+    },
     centerSlide: 'true',
     fade: 'true',
     grabCursor: 'true',
@@ -38,7 +38,7 @@ var swiper = new Swiper(".mc1", {
     loop: true,
     centerSlide: 'true',
     autoplay: {
-      delay: 2000,
+      delay: 4000,
       disableOnInteraction: false,
     },
     fade: 'true',
@@ -72,7 +72,7 @@ var swiper = new Swiper(".mc1", {
     loop: true,
     centerSlide: 'true',
     autoplay: {
-      delay: 2600,
+      delay: 4600,
       disableOnInteraction: false,
     },
     fade: 'true',

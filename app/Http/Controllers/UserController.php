@@ -59,6 +59,10 @@ class UserController extends Controller
     public function MovieCard(Request $request, $id)
     {
       $movie = Movie::firstWhere('movie_id',$id);
+      $review = Review::
+                join('users', 'users.id', '=', 'reviews.user_id')
+                ->where('movie_id', '=', $id)
+                ->get();
       $ott = Ott::firstWhere('id',$movie->ott_platform);
       $genre_id = json_decode($movie->genres);
       $genres = [];
@@ -67,13 +71,26 @@ class UserController extends Controller
         $genre = Genre::firstWhere('genre_id',$genre_id[$i]);
         array_push($genres,$genre);
       };
-     // dd($ott);
       return view('user.moviecard',
      [
       'active'=>'movies',
       'movie' => $movie,
       'genres' => $genres,
       'ott' => $ott,
+      'reviews' => $review,
     ]);       
+   }
+
+   public function AddReview(Request $request): RedirectResponse
+   {
+     $Review = Review::create([
+        'movie_id' => $request->movie_id,
+        'user_id' => Auth::id(),
+        'review_title' => $request->review_title,
+        'review' => $request->review,
+        'rating' => $request->rating,
+     ]);
+     $Review->save();
+     return redirect()->route('user.moviecard', ['id' => $request->movie_id]);
    }
 }

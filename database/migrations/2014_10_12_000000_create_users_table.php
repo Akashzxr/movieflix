@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('username');
-            $table->string('avatar')->nullable();
+            $table->string('avatar')->default('images/user.jpg');;
             $table->enum('role',['admin','user'])->default('user');
             $table->timestamps();
         });
