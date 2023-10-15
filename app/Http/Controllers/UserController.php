@@ -93,4 +93,17 @@ class UserController extends Controller
      $Review->save();
      return redirect()->route('user.moviecard', ['id' => $request->movie_id]);
    }
+
+   public function UserSearch(Request $request): RedirectResponse
+   {
+    $search = $request->search;
+    $result = Movie::firstWhere('movie_name',$search);
+    if($result != null){
+      return redirect()->route('user.moviecard', ['id' => $result->movie_id]);
+    }
+    else{
+      return Redirect::route('user.dashboard')->with('alert', 'No movies Found!');
+    }
+   }
+
 }

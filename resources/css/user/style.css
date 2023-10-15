@@ -607,3 +607,138 @@ h1#logo img{
 #footer .rf {
 	/*float:right;*/
 }
+
+/*------------*/
+.search-form{
+	/*transform: translate(21%,-2%);*/
+    transition: all 1s;
+    width: 43px;
+    height: 43px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 5px;
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	background-color: inherit;
+}
+
+
+input[type="search"]{
+   /* position: absolute;
+    top: 0;
+    left: 0;*/
+    width: 100%;;
+    height: 37.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 14px;
+	color: red;
+    border-radius: 20px;
+    padding: 0 20px;
+	background-color: inherit;
+}
+
+
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 35.5px;
+    height: 35.5px;
+   /* position: absolute;
+    top: 0;
+    right: 0;*/
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+.search-form:hover,
+.search-form:valid{
+    width: 290px;
+    cursor: pointer;
+}
+
+.search-form:hover input,
+.search-form:valid input{
+    display: block;
+}
+
+.search-form:hover .fa,
+.search-form:valid .fa{
+    background: #07051a;
+    color: red;
+}
+
+.search-form:valid a {
+  display: block;
+}
+
+input[type="search"]::-webkit-search-cancel-button{
+	-webkit-appearance: none;
+	height: 17px;
+	width: 17px;
+	border-radius: 50em;
+	background: url(/public/images/close.svg) no-repeat;
+	opacity: 0;
+	pointer-events: none;
+}
+
+input[type="search"]:focus::-webkit-search-cancel-button {
+	opacity: .3;
+	pointer-events: all;
+  }
+
+#alert{
+	color: white;
+	border: solid 2px red;
+    background-color: white;
+    position: absolute;
+    width: 22rem;
+    height: 5rem;
+    z-index: 6;
+    top: 7rem;
+    right: 1rem;
+    display: flex;
+	translate: -36px;
+	opacity: 1;
+	transition: opacity 4s ease-in-out,translate 3s ease-in-out;
+	border-radius: 10px;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+	background: rgb(151 151 151 / 50%) !important;
+	-webkit-backdrop-filter: blur(0.625em);
+    backdrop-filter: blur(0.21em);
+	gap: 16px;
+}
+
+.progress-bar{
+	position: absolute;
+	left: 8px;
+	bottom: 4px;
+	width: calc(100% - 16px);
+	height: 3px;
+	transform: scaleX(0);
+	transform-origin: left;
+	background: linear-gradient(
+		to right,
+		#292B2D,
+		#fc938b
+	);
+	border-radius: inherit;
+	animation: progress 3.9s 0.3s linear;
+}
+
+@keyframes progress {
+	to{
+		transform: scaleX(1);
+	}
+}
