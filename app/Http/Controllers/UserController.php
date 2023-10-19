@@ -121,13 +121,34 @@ class UserController extends Controller
 
    public function ViewMovies(){
     $movies = Movie::get();
-  
-
 
     return view('user.movies',[
         'movies' => $movies,
         'active' => 'movies',
     ]);  
    }
+
+   public function Profile(){
+    $movies = Movie::get();
+
+    return view('user.profile',[
+      'active' => "none",
+    ]);  
+   }
+
+   public function UpdateProfile(Request $request): RedirectResponse
+  {
+  $id = Auth::id();
+  $file = $request->file('image');
+  $path = $request->file('image')->store('images','public');
+  User::where('id', $id)
+      ->update([
+        'name'=>$request->name,
+        'username'=>$request->username,
+        'email'=>$request->email,
+        'avatar'=>$path
+      ]);
+  return Redirect::route('user.profile');
+ }
 
 }

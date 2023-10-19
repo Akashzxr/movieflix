@@ -33,6 +33,10 @@ Route::middleware(['noadminaccess','auth','verified'])->group(function () {
         return view('user.about',['active' => "about"]);
     })->name('user.about');
 
+    
+   Route::get('/user/profile', [UserController::class, 'Profile'])->name('user.profile');
+   Route::post('/user/profile/update', [UserController::class, 'UpdateProfile'])->name('user.profileupdate');
+
 });
 
 

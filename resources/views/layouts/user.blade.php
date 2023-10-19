@@ -51,8 +51,12 @@
             <i class="fa fa-search"></i>
            <!-- <a href="javascript:void(0)" id="clear-btn">Clear</a>!-->
           </form>
-          <a class="userprofile">
-            <img src="/images/userlogo.jpg" />
+          <a href="/user/profile" class="userprofile">
+          @if($user->avatar==null)
+          <img src="/images/user/user.jpg" alt="Profile Image">
+           @else
+          <img src="/storage/{{$user->avatar}}" alt="Profile Image">
+           @endif
           </a>
           <div class="text-end">
             <a href="{{ route('logout') }}" class="btn btn-outline-light me-2"><img src="/images/logout.png"/></a>

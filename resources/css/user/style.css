@@ -20,6 +20,8 @@ body {
 .userprofile img{
 	border-radius: 50%;
     width: 41px;
+	height: 41px;
+
 }
 .userandsearch{
 	display: flex;
