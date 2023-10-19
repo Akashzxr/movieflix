@@ -12,6 +12,7 @@ use App\Models\Review;
 use App\Models\Genre;
 use App\Models\Theatre;
 use App\Models\Ott;
+use App\Models\Feedback;
 
 class UserController extends Controller
 {
@@ -52,6 +53,7 @@ class UserController extends Controller
             'latest'=>$movies_latest,
             'action' => $action,
             'thriller' => $thriller,
+            'active' => 'home',
         ]);
 
     }
@@ -104,6 +106,16 @@ class UserController extends Controller
     else{
       return Redirect::route('user.dashboard')->with('alert', 'No movies Found!');
     }
+   }
+
+   public function AddFeedback(Request $request): RedirectResponse
+   {
+     $feedback = Feedback::create([
+        'user_id' => Auth::id(),
+        'feedback' => $request->message,
+     ]);
+     $feedback->save();
+     return Redirect::route('user.about');
    }
 
 }

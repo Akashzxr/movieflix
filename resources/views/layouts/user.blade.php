@@ -35,10 +35,10 @@
         <h1 id="logo"><a href="#">MovieHunter<img src="/images/logo.png" alt="" /></a></h1>
         <div id="navigation">
           <ul>
-            <li><a class="active" href="/dashboard">Home</a></li>
-            <li><a href="/user/about">About</a></li>
-            <li><a href="#">In theatres</a></li>
-            <li><a href="#">Movies</a></li>
+            <li><a class="{{$active=="home" ? "active" : ""}}"  href="/dashboard">Home</a></li>
+            <li><a class="{{$active=="about" ? "active" : ""}}" href="/user/about">About</a></li>
+            <li><a class="{{$active=="theatres" ? "active" : ""}}" href="#">In theatres</a></li>
+            <li><a class="{{$active=="movies" ? "active" : ""}}" href="#">Movies</a></li>
           </ul>
         </div>
         <div class="userandsearch">
