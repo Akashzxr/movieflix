@@ -28,6 +28,7 @@ Route::middleware(['noadminaccess','auth','verified'])->group(function () {
     Route::post('/user/review/add', [UserController::class, 'AddReview'])->name('user.addreview');
     Route::post('/user/search', [UserController::class, 'UserSearch'])->name('user.search');
     Route::post('/user/feedback', [UserController::class, 'AddFeedback'])->name('user.feedback');
+    Route::get('/user/movies', [UserController::class, 'ViewMovies'])->name('user.movies');
     Route::get('/user/about', function () {
         return view('user.about',['active' => "about"]);
     })->name('user.about');

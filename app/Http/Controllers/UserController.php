@@ -118,4 +118,16 @@ class UserController extends Controller
      return Redirect::route('user.about');
    }
 
+
+   public function ViewMovies(){
+    $movies = Movie::get();
+  
+
+
+    return view('user.movies',[
+        'movies' => $movies,
+        'active' => 'movies',
+    ]);  
+   }
+
 }

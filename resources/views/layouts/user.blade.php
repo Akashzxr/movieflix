@@ -37,8 +37,8 @@
           <ul>
             <li><a class="{{$active=="home" ? "active" : ""}}"  href="/dashboard">Home</a></li>
             <li><a class="{{$active=="about" ? "active" : ""}}" href="/user/about">About</a></li>
-            <li><a class="{{$active=="theatres" ? "active" : ""}}" href="#">In theatres</a></li>
-            <li><a class="{{$active=="movies" ? "active" : ""}}" href="#">Movies</a></li>
+       <!--     <li><a class="{{$active=="theatres" ? "active" : ""}}" href="#">In theatres</a></li>!-->
+            <li><a class="{{$active=="movies" ? "active" : ""}}" href="/user/movies">Movies</a></li>
           </ul>
         </div>
         <div class="userandsearch">
