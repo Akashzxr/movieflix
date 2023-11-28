@@ -17,15 +17,15 @@
     
     <main class="movie-info" style="height: 640px;background: url(/storage/{{$movie->movie_image}}) no-repeat center / cover;">
      <div class="shade"></div>
-   <!-- <div class="trailer-container" id="trailer-container">
+    <div class="trailer-container" id="trailer-container">
       <div class="videoclose">
         <ion-icon name="close-circle-outline" id="trailer-close"></ion-icon><span>close</span>
       </div>
-      <iframe class="video" id="video" width="560" height="315" src="{{$movie->trailer_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-   </div>!-->
+      <iframe class="video" id="video" width="560" height="319" src="{{$movie->trailer_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   </div>
 
     <!---movie watch!-->
-   <!-- <div class="movie-container" id="movie-container">
+   <div class="movie-container" id="movie-container">
       <div class="videoclose">
         <ion-icon name="close-circle-outline" id="movie-close"></ion-icon><span>close</span>
       </div>
